@@ -1,0 +1,25 @@
+{
+  "name": "protractor-cucumber-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "protractor.conf.js",
+  "scripts": {
+    "test": "protractor --baseUrl http://localhost:8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thehatz/protractor-cucumber-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thehatz/protractor-cucumber-starter/issues"
+  },
+  "homepage": "https://github.com/thehatz/protractor-cucumber-starter/readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "cucumber": "^3.1.0",
+    "protractor": "^5.2.0",
+    "protractor-cucumber-framework": "^4.1.1"
+  }
+}
