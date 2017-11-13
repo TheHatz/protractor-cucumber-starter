@@ -7,7 +7,10 @@ exports.config = {
   framework: 'custom',
   frameworkPath: require.resolve('protractor-cucumber-framework'),
   cucumberOpts: {
-    require: ['./features/step_definitions/**/*.js'],
+    require: [
+        './features/support/**/*hooks.js',
+        './features/step_definitions/**/*.js'
+    ],
     strict: true,
     format: [
       'json:reports/summary.json'
