@@ -20,10 +20,10 @@ class AppPage {
   }
 
   getClickResults() {
-    browser.takeScreenshot().then(function(png){
+    /* browser.takeScreenshot().then(function(png){
         writeScreenShot.writeScreenShot(png, 'yo0000000000.png');
 
-      });
+      }); */
 
     return element(by.className('qa-main-div'));
 
