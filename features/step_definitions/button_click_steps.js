@@ -41,7 +41,7 @@ defineSupportCode(({Given, When, Then, Before, World}) => {
             app3.getClickResults(function(e,b){
                 console.log(e)
                 let ele = b.element(by.className('qa-main-div'));
-                expect(ele.getAttribute('class').to.equal('foo'))
+                expect(ele.getAttribute('class')).to.equal('foo')
             })
 
 
