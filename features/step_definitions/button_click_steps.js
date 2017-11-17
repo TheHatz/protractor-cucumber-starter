@@ -31,18 +31,24 @@ defineSupportCode(({Given, When, Then, Before, World}) => {
 
 
     When(/^I click the submit button$/,
-        function (callback) {
-            app3.clickSubmit().then(callback)
+        function () {
+            app3.clickSubmit()
 
         });
 
     Then(/^I should see the div change color$/,
         function(callback) {
-            e = app3.getClickResults(callback)
-            console.log('class list is: ' + e.classList)
-            console.log('the class is: ' + e.getAttribute('class').toString())
+            app3.getClickResults(function(e,b){
+                console.log(e)
+                let ele = b.element(by.className('qa-main-div'));
+                expect(ele.getAttribute('class').to.equal('foo'))
+            })
 
-            expect(e.getAttribute('class')).to.contain('qa-red')
+
+            //e = browser.querySelector('.qa-button')
+            //console.log('class list is: ' + app3)
+           // console.log('the class is: ' + e.getAttribute('class').toString())
+
         })
 
 
