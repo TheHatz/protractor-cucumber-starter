@@ -12,7 +12,7 @@ defineSupportCode(function({After, Before}) {
     Before(function (callback) {
         var world = this;
         console.log('before 1')
-        //app = new AppPage();
+        //app = new AppPage();x
         console.log('before 2')
         /*tmp.dir({unsafeCleanup: true}, function(error, dir) {
             if (error) {

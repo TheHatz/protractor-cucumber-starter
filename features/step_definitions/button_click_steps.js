@@ -10,46 +10,26 @@ defineSupportCode(({Given, When, Then, Before, World}) => {
         app3 = new AppPage2();
     });
 
-    /*Given(/^I am on the test site$/,
-      () => app3.navigateTo());
-      When(/^I click the submit button$/,
-          () => app3.clickSubmit());
-
-      Then(/^I should see the div change color$/,
-          () => app3.getClickResults((ele) => {
-              expect(ele.getAttribute('class')).to.contain('qa-red')
-          }))
-      */
-
-
 
     Given(/^I am on the test site$/,
         function (callback) {
             app3.navigateTo().then(callback)
-
         });
 
 
     When(/^I click the submit button$/,
-        function () {
-            app3.clickSubmit()
+        function (callback) {
+            app3.clickSubmit().then(callback)
 
         });
 
     Then(/^I should see the div change color$/,
         function(callback) {
-            app3.getClickResults(function(e,b){
-                console.log(e)
-                let ele = b.element(by.className('qa-main-div'));
-                expect(ele.getAttribute('class')).to.equal('foo')
+            app3.getMainBlockElement().getAttribute('class').then(function (value) {
+            console.log('the val is: ' + value);
+            expect(value).to.include('qa-blue');
+            callback();
+                })
             })
-
-
-            //e = browser.querySelector('.qa-button')
-            //console.log('class list is: ' + app3)
-           // console.log('the class is: ' + e.getAttribute('class').toString())
-
-        })
-
 
 });
