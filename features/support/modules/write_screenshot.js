@@ -4,7 +4,6 @@ class WriteScreenshot{
 
     writeScreenShot(data,filename){
         var stream = fs.createWriteStream(filename);
-        console.log('screenshot?');
         stream.write(new Buffer(data, 'base64'));
         stream.end();
     }

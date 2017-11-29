@@ -1,5 +1,3 @@
-const writeScreenShot = require('../modules/write_screenshot.js')
-
 class AppPage {
 
   constructor(){
