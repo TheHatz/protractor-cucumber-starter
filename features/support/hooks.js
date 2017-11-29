@@ -1,5 +1,10 @@
 var {defineSupportCode} = require('cucumber');
 const AppPage =  require('../step_definitions/support/pages/js_training');
+var Cucumber = require('cucumber');
+var fs = require('fs');
+var conf = require('./world.js').World;
+const writeScreenShot = require('../step_definitions/support/modules/write_screenshot.js')
+
 
 defineSupportCode(function({After, Before}) {
     // Synchronous
@@ -25,9 +30,23 @@ defineSupportCode(function({After, Before}) {
     });
 
     // Asynchronous Promise
-    After(function () {
-        // Assuming this.driver is a selenium webdriver
-        //return this.driver.quit();
+    After(function(scenario, callback) {
+        console.log('scenario', scenario);
+        console.log('status', scenario.result.status);
+        let result = scenario.result.status
+
+        if (result === 'failed') {
+            browser.takeScreenshot().then(function(png) {
+                writeScreenShot.writeScreenShot(png, '1234567890.png');
+            });
+        };
+
+        callback();
+
     });
+
+
+
+
 });
 
