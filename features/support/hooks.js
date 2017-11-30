@@ -10,7 +10,7 @@ defineSupportCode(function({After, Before}) {
     // Asynchronous Callback
     Before(function (callback) {
         var world = this;
-        //app = new AppPage();
+        main_page = new AppPage();
     });
 
     // Asynchronous Promise
@@ -36,4 +36,6 @@ defineSupportCode(function({After, Before}) {
     });
 });
 
-module.exports = new AppPage();
+module.exports = {
+    main_page: new AppPage()
+}

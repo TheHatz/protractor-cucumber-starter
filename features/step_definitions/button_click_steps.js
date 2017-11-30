@@ -1,6 +1,7 @@
 const expect = require('chai').expect;
 const defineSupportCode = require('cucumber').defineSupportCode;
-const main_page  = require('../support/hooks');
+var main_page  = require('../support/hooks').main_page;
+//import { main_page as main_page } from '../support/hooks';
 
 defineSupportCode(({Given, When, Then}) => {
 
